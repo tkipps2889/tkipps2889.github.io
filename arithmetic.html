@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Simple Arithmetic</title>
+        <script type = "text/javascript">
+            function calculate() {
+                //define variables
+                var num1;
+                var num2;
+                var addans;
+                var subans;
+                var multans;
+                var divans;
+                var modans;
+
+                //get data from user
+                num1 = prompt("Enter the first number:");
+                num2 = prompt("Enter the second number:");
+
+                //do math
+                addans = num1 * 1 + num2 * 1;//makes sure num1 and num2 are numeric
+                subans = num1 - num2;
+                multans = num1 * num2;
+                divans = num1 / num2;
+                modans = num1 % num2;
+
+                document.writeln("Arithmetic Answers");
+                document.writeln(addans);
+                document.writeln(subans);
+                document.writeln(multans);
+                document.writeln(divans);
+                document.writeln(modans);
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <input type="button" value="Click here for arithmetic calcuations" class = "calcbutton" onclick = "calculate()"/>
+        </form>
+    </body>
+</html>
