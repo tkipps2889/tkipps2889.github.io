@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <title>Summer Breeze Beach Cottage Rentals</title>
+        <style>
+        body {background-color:#a484d0;
+                color:#394141;
+                font-family:Arial, Helvetica, sans-serif;
+                margin-top:-px;
+            }
+        h1 {color: #002b2b; font-size: 1.75em; text-align: center;}
+        p {margin:auto; max-width: 1000px; font-size: 1.2em; }
+        table {width: 800px; font-size: 1.3em; background-color: #dbb3db; margin:auto;}
+        img {width: 800px;  margin:auto; display: block;}
+        input {margin:auto; display: block; font-size: 1.3em; min-height: 2em;}
+        </style>
+        <script type="text/javascript">
+            function beachrental()
+            {
+
+                var guests = 0;
+                guests = prompt("Enter the nuimber of guests for your \nHOLIDAY ROMA TOURS trip:");
+
+
+                var air = 1200 * guests;
+                var hotel = 1325;
+                var meals = 375 * guests;
+                var bus = 80 * guests;
+                var activities = 220 * guests;
+                var total = air + hotel + meals + bus + activities;
+
+                alert("\nHOLIDAY ROMA TOURS\n--------------------------------\nNumber of guests:" +
+                    guests + 
+                    "\n--------------------------------" +
+                    "\nAirfare:         $" + air +
+                    "\nHotel:           $" + hotel +
+                    "\nMeals:           $" + meals +
+                    "\nBus Pass:        $" + bus +
+                    "\nActivities:      $" + activities +
+                    "\n--------------------------------" +
+                    "\nTotal             $" + total
+                );
+                //document.write("<h1>Total: "+total+"</h1>");
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Holiday Roma!</h1>
+        <p>Visit Rome with us! <b>Holiday Roma Tours</b> are the most exciting way to visit this ancient Italian city. Stay in the luxurious <b>Hotel Farnese</b>, enjoy fabulous meals each day, and visit Rome's most renown sites and museuyms on our <b>Hop On/Hop Off</b> buses. Your trip will also include a night of musical theater at the <b>Teatro Sistina!</b></p>
+        <br />
+        <img src="rome.jpg" />
+        <br />
+        <table>
+            <tr style="font-weight: bold; font-size: 120%; text-align:center;">
+                <td colspan="3">Holiday Roma Tour Rates</td>
+            </tr>
+            <tr>
+                <td><b>Air:</b></td>
+                <td>Round trip airfare from JFK to Rome</td>
+                <td>$1200</td>
+            </tr>
+            <tr>
+                <td><b>Hotel:</b></td>
+                <td>5 nights in a 4-star hotel</td>
+                <td>$265 per night</td>
+            </tr>
+            <tr>
+                <td><b>Meals:</b></td>
+                <td>Includes 5 breakfasts and 5 dinners</td>
+                <td>$75 per day</td>
+            </tr>
+            <tr>
+                <td><b>Bus Tour:</b></td>
+                <td>Hop On/Hop Off buses: 3-day pass</td>
+                <td>$80</td>
+            </tr>
+            <tr>
+                <td><b>Activities:</b></td>
+                <td>Includes 1 theater performance & museum tickets</td>
+                <td>$220</td>
+            </tr>
+            <tr style="text-align:center;">
+                <td colspan="3"><i>VAT is included. Alcoholic beverages and tips are not included.</i></td>
+            </tr>
+        </table>
+        <br />
+        <form>
+            <input type = "button" value = "Click to calculate Tour Roma tour cost" class = "button" onclick="beachrental()"/>
+        </form>
+        <br /><br />
+    </body>
+</html>
