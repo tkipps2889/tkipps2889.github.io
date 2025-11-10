@@ -5,7 +5,7 @@
         </title>
         <style>
             body {color: #f0D99a; background-color: #990000; font-family: verdana, arial, sans-serif; font-size:15px;}
-            table {color: #990000; background-color: #f0D99a; width: 300px;}
+            table {color: #990000; background-color: #f0D99a; width: 300px; border: 1px;}
             td {font-weight: bold;}
             h3 {text-align: center;}
             input {font-size: 1.3em; font-weight: bold; width: 300px;}
@@ -54,6 +54,44 @@
                     "\nTotal:            " + dollar.format(total) + howtopay
                 );
             }
+            function suborder() {
+                const salestaxrate = 0.07; 
+                const discountrate = .15; 
+                const pricesmall = 12.99;
+                const pricemedium = 10.99;
+                const pricelarge = 12.99;
+                const pricexlarge = 11.99;
+                const dollar = new Intl.NumberFormat("en-US", {style: 'currency', currency: "USD",}); 
+                const howtopay = "\n\nCredit, Debit, and Cash accepted";
+                const line  = "\n--------------------------------------";
+
+                var pizzasize = "";
+                var numpizzas = 0;
+                var pizzacost = 0;
+                var discountamount = 0;
+                var salestaxamount = 0;
+                var total = 0;
+
+                part1 = "What kind of sub would you like to order?";
+                part2 = "\nEnter: \n 1. for Hot Italian Sub \n 2. for Ham and Cheese Sub\n 3. for Philly Cheese Steak Sub\n 4. for Smoked Turkey Sub";
+                pizzasize = prompt(part1 + part2);
+                numpizzas = prompt("Enter the number of subs you would like to order");
+
+                if (pizzasize == "1") pizzacost = numpizzas * pricesmall;
+                if (pizzasize == "2") pizzacost = numpizzas * pricemedium;
+                if (pizzasize == "3") pizzacost = numpizzas * pricelarge;
+                if (pizzasize == "4") pizzacost = numpizzas * pricexlarge;
+
+                salestaxamount = pizzacost * salestaxrate;
+                total = pizzacost + salestaxamount;
+
+                alert("\nGALLO'S PIZZA & SUBS SHOP" + line +
+                    "\nNumber of subs: " + numpizzas + line +
+                    "\nSub cost:         " + dollar.format(pizzacost) +
+                    "\nSales tax:        " + dollar.format(salestaxamount) +
+                    "\nTotal:            " + dollar.format(total) + howtopay
+                );
+            }
         </script>
     </head>
     <body>
@@ -65,7 +103,7 @@
             <br />Fast and free delivery within city limits!
             <br />Credit, debit, cash accepted
         </h4>
-        <table border = "1">
+        <table>
             <tr><td colspan = "2"><h3>Pizza Price List</h3></td></tr>
             <tr><td colspan = "2"><img src="pizza.jpg"/></td></tr>
             <tr><td>Small    </td><td>$7.99</td></tr>
@@ -75,6 +113,16 @@
             <tr><td>Sales tax</td><td>7%</td></tr>
             <tr><td colspan = "2">Gallo Pizza Party: <br />Order 10 or more pizzas, recieve a 15% discount!</td></tr>
             <tr><td colspan = "2"><form><input type = "button" value = "Click here to order pizza" class = "button" onclick="pizzaorder()" /></form></td></tr>
+        </table>
+        <table>
+            <tr><td colspan = "2"><h3>Sub Price List</h3></td></tr>
+            <tr><td colspan = "2"><img src="sub.jpg"/></td></tr>
+            <tr><td>Hot Itallian       </td><td>$12.99</td></tr>
+            <tr><td>Ham & Cheese       </td><td>$10.99</td></tr>
+            <tr><td>Philly Cheese Steak</td><td>$12.99</td></tr>
+            <tr><td>Smoked Turkey      </td><td>$11.99</td></tr>
+            <tr><td>Sales tax          </td><td>7%</td></tr>
+            <tr><td colspan = "2"><form><input type = "button" value = "Click here to order sub(s)" class = "button" onclick="suborder()" /></form></td></tr>
         </table>
     </body>
 </html>
